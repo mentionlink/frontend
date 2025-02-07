@@ -1,0 +1,37 @@
+---
+# Copyright 2024 Mentionlink. All rights reserved.
+# Use of this source code is governed by the PolyForm Shield 1.0.0 license
+# that can be found in the LICENSE.md file at the root of this repository.
+title: Docs
+description: Automagically affiliate-link your content with Mentionlink. Boost your website's revenue effortlessly by integrating our seamless affiliate linking solution. Learn how to set up and configure your site to maximize earnings with minimal effort.
+template: splash
+hero:
+  tagline: Turn missed product mentions into affiliate links
+  image:
+    light: ../../assets/hero.light.svg
+    dark: ../../assets/hero.dark.svg
+    alt: A workflow diagram depicting how Mentionlink work
+  actions:
+    - text: Register
+      link: https://app.mentionlink.com/accounts/register/
+      variant: primary
+      attrs:
+        target: _blank
+    - text: Learn More
+      link: /start/
+      variant: secondary
+      icon: right-arrow
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Get early access
+
+<CardGrid stagger>
+  <Card title="Sign up for early access" icon="pencil">
+    First, please register your website using the [sign up form](https://app.mentionlink.com/accounts/register/). It takes less than **30 seconds** to complete the form. We will be in touch shortly &#x1f44b;
+  </Card>
+  <Card title="Configure your website" icon="setting">
+    Second, follow the [setup instructions](/setup/) to configure your website and start serving mention links immediately. A technically-savvy person should take less than **5 minutes** to follow the instructions.
+  </Card>
+</CardGrid>

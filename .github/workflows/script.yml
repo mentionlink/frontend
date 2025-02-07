@@ -1,0 +1,81 @@
+# Copyright 2025 Mentionlink. All rights reserved.
+# Use of this source code is governed by the PolyForm Shield 1.0.0 license
+# that can be found in the LICENSE.md file at the root of this repository.
+
+name: Script
+on:
+  push:
+    paths:
+      - .github/workflows/script.yml
+      - packages/script/**
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  BUILD_PATH: packages/script
+  CI: true
+
+jobs:
+  all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          registry-url: "https://registry.npmjs.org"
+          cache: npm
+          cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Build Package
+        run: |
+          npm run lint
+          npm run build
+          npm run minify
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Test Package
+        run: npx playwright test
+        working-directory: ${{ env.BUILD_PATH }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: ${{ env.BUILD_PATH }}/playwright-report
+          retention-days: 30
+      - name: Install rclone
+        if: github.ref == 'refs/heads/main'
+        run: sudo apt-get install --yes rclone
+      - name: Deploy Package
+        if: github.ref == 'refs/heads/main'
+        run: |
+          rclone version
+          rclone copyto src/script.ts cloudflare:mentionlink-cdn-prod/v1/script.ts --config rclone.conf
+          rclone copyto out/script.js cloudflare:mentionlink-cdn-prod/v1/script.js --config rclone.conf
+          rclone copyto out/script.js.map cloudflare:mentionlink-cdn-prod/v1/script.js.map --config rclone.conf
+          rclone copyto out/script.min.js cloudflare:mentionlink-cdn-prod/v1/script.min.js --config rclone.conf
+          rclone copyto out/script.min.js.map cloudflare:mentionlink-cdn-prod/v1/script.min.js.map --config rclone.conf
+          rclone copyto public/robots.txt cloudflare:mentionlink-cdn-prod/robots.txt --config rclone.conf
+        working-directory: ${{ env.BUILD_PATH }}
+        env:
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
+      - name: Publish Package to NPM
+        if: github.ref == 'refs/heads/main'
+        run: npm publish --provenance --access public
+        working-directory: ${{ env.BUILD_PATH }}
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

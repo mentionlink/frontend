@@ -1,0 +1,3 @@
+👋 Welcome to Mentionlink!
+
+Your development container is fully setup with all required software. Happy coding!

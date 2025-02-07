@@ -1,0 +1,26 @@
+{
+  "name": "mentionlink",
+  "version": "1.0.0",
+  "license": "PolyForm-Shield-1.0.0",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "build": "esbuild src/script.ts --sourcemap --bundle --outdir=out",
+    "watch": "esbuild src/script.ts --sourcemap --bundle --outdir=out --watch",
+    "minify": "esbuild out/script.js --minify --sourcemap --outfile=out/script.min.js",
+    "serve": "mkdir -p out && cp test/*.html out && esbuild src/script.ts --sourcemap --bundle --outdir=out --servedir=out --serve=0.0.0.0:9000"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.53.2",
+    "@types/node": "^24.0.13",
+    "esbuild": "^0.25.6",
+    "eslint": "^9.31.0",
+    "playwright": "^1.52.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.36.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mentionlink/frontend.git"
+  }
+}

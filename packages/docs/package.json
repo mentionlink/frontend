@@ -1,0 +1,28 @@
+{
+  "name": "@mentionlink/docs",
+  "version": "0.0.4",
+  "type": "module",
+  "license": "PolyForm-Shield-1.0.0",
+  "scripts": {
+    "dev": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.34.6",
+    "astro": "^5.11.1",
+    "@fontsource-variable/jetbrains-mono": "^5.2.6",
+    "@fontsource-variable/rubik": "^5.2.6"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "sharp": "^0.34.3",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mentionlink/frontend.git"
+  }
+}

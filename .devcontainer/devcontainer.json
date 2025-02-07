@@ -1,0 +1,51 @@
+{
+  "name": "Frontend",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "build": {
+    "dockerfile": "./Dockerfile"
+  },
+  "containerEnv": {
+    "CI": "true"
+  },
+  "postCreateCommand": ".devcontainer/setup.sh",
+  "waitFor": "postCreateCommand",
+  // "postAttachCommand": {
+  //   "docs": "cd packages/docs && npm run dev",
+  //   "script": "cd packages/script && npm run serve"
+  // },
+  "forwardPorts": [
+    4321,
+    9000
+  ],
+  "portsAttributes": {
+    "4321": {
+      "label": "Preview Docs"
+    },
+    "9000": {
+      "label": "Preview Script"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "packages/docs/astro.config.mjs",
+        "packages/script/src/script.ts"
+      ]
+    },
+    "vscode": {
+      "settings": {
+        "editor.fontFamily": "monospace",
+        "editor.fontLigatures": false
+      },
+      "extensions": [
+        "astro-build.astro-vscode",
+        "ms-azuretools.vscode-docker",
+        "github.copilot",
+        "github.copilot-chat",
+        "terrastruct.d2"
+      ]
+    }
+  }
+}

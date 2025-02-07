@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Docs",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}/packages/docs"
+    },
+    {
+      "name": "Preview Docs",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:4321"
+    },
+    {
+      "name": "Run Script",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "npm run serve",
+      "cwd": "${workspaceFolder}/packages/script"
+    },
+    {
+      "name": "Preview Script",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:9000"
+    }
+  ]
+}

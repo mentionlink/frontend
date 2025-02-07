@@ -1,0 +1,32 @@
+---
+# Copyright 2024 Mentionlink. All rights reserved.
+# Use of this source code is governed by the PolyForm Shield 1.0.0 license
+# that can be found in the LICENSE.md file at the root of this repository.
+title: WordPress Setup
+description: A guide on how to setup the Mentionlink script onto a WordPress site.
+---
+
+## WordPress installation instructions
+
+1. Navigate to your WordPress admin dashboard. The dashboard can usually be found at `https://example.com/wp-admin/` where `example.com` must be replaced with your own domain.
+2. In the _left_ sidebar, hover over **Appearance** and click on **Theme File Editor**.
+3. In the _right_ sidebar, click on **Theme Header (header.php)**.
+
+Then, add the following line inside the `<head>` tag, just before the `</head>` tag closes.
+
+```diff lang="php"
+<head>
+  <?php wp_head(); ?>
++  <script async src="https://cdn.mentionlink.com/v1/script.min.js"></script>
+</head>
+```
+
+## Questions?
+
+Please read the [frequently asked questions](/faq/).
+
+## Test your installation
+
+You can test your installation by adding the URL fragment to a page from your website, i.e. `#mentionlink=debug`.
+Open DevTools in Chrome and you should see a success message being logged.
+If you are having trouble confirming that your installation was successful, please reach out to [help@mentionlink.com](mailto:help@mentionlink.com).

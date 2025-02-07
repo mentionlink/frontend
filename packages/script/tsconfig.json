@@ -1,0 +1,13 @@
+{
+  "include": [
+    "src/**/*.ts"
+  ],
+  "compilerOptions": {
+    "target": "esnext",
+    // https://www.typescriptlang.org/tsconfig/#lib
+    "lib": [
+      "dom",
+      "esnext"
+    ]
+  }
+}
