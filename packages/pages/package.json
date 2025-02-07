@@ -1,0 +1,26 @@
+{
+  "name": "@mentionads/pages",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "PolyForm-Shield-1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/starlight": "^0.30.3",
+    "@fontsource-variable/jetbrains-mono": "^5.1.2",
+    "@fontsource-variable/space-grotesk": "^5.1.1",
+    "astro": "^5.1.2",
+    "sharp": "^0.33.5",
+    "typescript": "^5.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mentionads/frontend.git"
+  }
+}

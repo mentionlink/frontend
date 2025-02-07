@@ -1,0 +1,68 @@
+# Copyright 2025 Mention Ads. All rights reserved.
+# Use of this source code is governed by the PolyForm Shield 1.0.0 license
+# that can be found in the LICENSE.md file at the root of this repository.
+
+name: Script
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/script.yml
+      - packages/script/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: script
+  cancel-in-progress: true
+
+env:
+  BUILD_PATH: packages/script
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Build Package
+        run: |
+          npm run build
+          npm run minify
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Test Package
+        run: npx playwright test
+        working-directory: ${{ env.BUILD_PATH }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: ${{ env.BUILD_PATH }}/playwright-report
+          retention-days: 30
+      - name: Install Rclone
+        run: sudo apt-get install --yes rclone
+      - name: Deploy Package
+        run: |
+          rclone version
+          rclone copyto src/script.ts cloudflare:mentionads-prod/v1/script.ts --config rclone.conf
+          rclone copyto out/script.js cloudflare:mentionads-prod/v1/script.js --config rclone.conf
+          rclone copyto out/script.js.map cloudflare:mentionads-prod/v1/script.js.map --config rclone.conf
+          rclone copyto out/script.min.js cloudflare:mentionads-prod/v1/script.min.js --config rclone.conf
+          rclone copyto out/script.min.js.map cloudflare:mentionads-prod/v1/script.min.js.map --config rclone.conf
+        working-directory: ${{ env.BUILD_PATH }}
+        env:
+          AWS_ACCESS_KEY: ${{ secrets.RCLONE_AWS_ACCESS_KEY }}
+          AWS_SECRET_KEY: ${{ secrets.RCLONE_AWS_SECRET_KEY }}

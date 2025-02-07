@@ -1,0 +1,25 @@
+{
+  "editor.fontFamily": "'Berkeley Mono', 'JetBrains Mono', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.renderWhitespace": "selection",
+  "editor.rulers": [
+    100,
+  ],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/node_modules": true,
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/package-lock.json": true
+  },
+  "css.format.enable": true,
+  "javascript.format.enable": true,
+  "json.format.enable": true,
+  "html.format.enable": true,
+}

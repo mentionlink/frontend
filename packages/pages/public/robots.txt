@@ -1,0 +1,10 @@
+# Copyright 2024 Mention Ads. All rights reserved.
+# Use of this source code is governed by the PolyForm Shield 1.0.0 license
+# that can be found in the LICENSE.md file at the root of this repository.
+
+user-agent: *
+allow: /
+disallow: /cdn-cgi/
+disallow: /patent/
+
+sitemap: https://mentionads.com/sitemap-index.xml
