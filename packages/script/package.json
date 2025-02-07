@@ -1,5 +1,5 @@
 {
-  "name": "mentionads",
+  "name": "@mentionads/script",
   "version": "1.0.2",
   "license": "PolyForm-Shield-1.0.0",
   "scripts": {
