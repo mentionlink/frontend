@@ -7,4 +7,4 @@ allow: /
 disallow: /cdn-cgi/
 disallow: /patent/
 
-sitemap: https://mentionads.com/sitemap-index.xml
+sitemap: https://www.mentionads.com/sitemap-index.xml
