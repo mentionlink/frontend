@@ -1,7 +1,25 @@
 {
-  "name": "Mention Ads DevContainer",
+  "name": "Frontend DevContainer",
   "build": {
     "dockerfile": "./Dockerfile"
+  },
+  "postCreateCommand": ".devcontainer/setup.sh",
+  "waitFor": "postCreateCommand",
+  "postAttachCommand": {
+    "pages": "cd packages/pages && npm run dev",
+    "script": "cd packages/script && npm run watch"
+  },
+  "forwardPorts": [
+    4321,
+    9000
+  ],
+  "portsAttributes": {
+    "4321": {
+      "label": "Pages Preview"
+    },
+    "9000": {
+      "label": "Script Preview"
+    }
   },
   "customizations": {
     "codespaces": {
@@ -18,20 +36,5 @@
         "github.copilot-chat"
       ]
     }
-  },
-  "portsAttributes": {
-    "4321": {
-      "label": "Pages Preview",
-      "onAutoForward": "openPreview"
-    }
-  },
-  "forwardPorts": [
-    4321
-  ],
-  "postCreateCommand": ".devcontainer/setup.sh",
-  "waitFor": "postCreateCommand",
-  "postAttachCommand": {
-    "pages": "cd packages/pages && npm run dev",
-    "script": "cd packages/script && npm run watch"
   }
 }
