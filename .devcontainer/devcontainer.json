@@ -6,7 +6,8 @@
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "packages/pages/astro.config.mjs"
+        "packages/pages/astro.config.mjs",
+        "packages/script/src/script.ts"
       ]
     },
     "vscode": {
