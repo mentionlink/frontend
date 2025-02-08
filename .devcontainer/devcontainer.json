@@ -30,7 +30,8 @@
     },
     "vscode": {
       "settings": {
-        "editor.fontFamily": "monospace"
+        "editor.fontFamily": "monospace",
+        "editor.fontLigatures": false
       },
       "extensions": [
         "astro-build.astro-vscode",
