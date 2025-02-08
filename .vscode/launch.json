@@ -2,10 +2,30 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "command": "docs/node_modules/.bin/astro dev",
-      "name": "Development server",
+      "name": "Run Pages",
       "request": "launch",
-      "type": "node-terminal"
+      "type": "node-terminal",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}/packages/pages"
+    },
+    {
+      "name": "Preview Pages",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:4321"
+    },
+    {
+      "name": "Run Script",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "npm run serve",
+      "cwd": "${workspaceFolder}/packages/script"
+    },
+    {
+      "name": "Preview Script",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:9000"
     }
   ]
 }

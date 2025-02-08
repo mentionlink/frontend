@@ -15,10 +15,10 @@
   ],
   "portsAttributes": {
     "4321": {
-      "label": "Pages Preview"
+      "label": "Preview Pages"
     },
     "9000": {
-      "label": "Script Preview"
+      "label": "Preview Script"
     }
   },
   "customizations": {
