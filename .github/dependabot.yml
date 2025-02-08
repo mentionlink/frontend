@@ -4,9 +4,9 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
+  - package-ecosystem: npm
     directories:
-      - "/packages/pages"
-      - "/packages/script"
+      - /packages/pages
+      - /packages/script
     schedule:
-      interval: "daily"
+      interval: weekly
