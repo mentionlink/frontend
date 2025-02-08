@@ -6,33 +6,12 @@ title: Setup
 description: A guide in my new Starlight docs site.
 ---
 
-:::tip[Are you using Wordpress?]
-If you're using Wordpress, then please follow the [Wordpress installation instructions](/setup/wordpress/).
-:::
+# Setup
 
-# Generic installation instructions
+## Generic Setup
 
-Add the following line inside the `<head>` tag, just before the `</head>` tag closes.
+Please see the [generic setup instructions](/setup/generic/).
 
-:::note
-You must replace `example.com` in the `data-domain` attribute with your own custom domain name.
-Do not prefix your domain with `www.` even if your website is configured to run on `www.example.com`.
-:::
+## Wordpress Setup
 
-```diff lang="html"
-<head>
-  <title>My title</title>
-  <meta name="description" content="My description">
-+  <script data-domain="example.com" src="https://cdn.mentionads.com/v1/script.min.js" defer></script>
-</head>
-```
-
-## Questions?
-
-Please read the [frequently asked questions](/faq/).
-
-## Test your installation
-
-You can test your installation by adding the URL fragment to a page from your website, i.e. `#mentionads=debug`.
-Open DevTools in Chrome and you should see a success message being logged.
-If you are having trouble confirming that your installation was successful, please reach out to [help@mentionads.com](mailto:help@mentionads.com).
+Please see the [WordPress setup instructions](/setup/wordpress/).

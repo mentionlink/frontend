@@ -18,20 +18,19 @@ export default defineConfig({
     },
     sidebar: [{
       label: "Intro",
-      items: [
-        {
-          label: "What is Mention Ads?",
-          slug: "pitch"
-        }]
+      autogenerate: { directory: "intro" },
+    }, {
+      label: "Demo",
+      autogenerate: { directory: "demo" },
     }, {
       label: "Setup",
       autogenerate: { directory: "setup" },
     }, {
+      label: "Config",
+      autogenerate: { directory: "config" },
+    }, {
       label: "FAQ",
       slug: "faq",
-    }, {
-      label: "Config",
-      slug: "config",
     }, {
       label: "Changelog",
       slug: "changelog",
