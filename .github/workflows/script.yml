@@ -5,6 +5,8 @@
 name: Script
 on:
   push:
+    branches:
+      - main
     paths:
       - .github/workflows/script.yml
       - packages/script/**
