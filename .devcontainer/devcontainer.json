@@ -1,5 +1,5 @@
 {
-  "name": "TypeScript & Node",
+  "name": "Mention Ads DevContainer",
   "build": {
     "dockerfile": "./Dockerfile"
   },
@@ -12,6 +12,7 @@
     "vscode": {
       "extensions": [
         "astro-build.astro-vscode",
+        "ms-azuretools.vscode-docker",
         "github.copilot",
         "github.copilot-chat"
       ]
@@ -26,9 +27,10 @@
   "forwardPorts": [
     4321
   ],
-  "postCreateCommand": "cd packages/pages && npm ci && npm run build",
+  "postCreateCommand": ".devcontainer/setup.sh",
   "waitFor": "postCreateCommand",
   "postAttachCommand": {
-    "Server": "npm run dev"
+    "pages": "cd packages/pages && npm run dev",
+    "script": "cd packages/script && npm run watch"
   }
 }
