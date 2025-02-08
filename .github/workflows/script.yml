@@ -68,8 +68,8 @@ jobs:
         env:
           AWS_ACCESS_KEY: ${{ secrets.RCLONE_AWS_ACCESS_KEY }}
           AWS_SECRET_KEY: ${{ secrets.RCLONE_AWS_SECRET_KEY }}
-      - name: Publish Package to NPM
-        run: npm publish --provenance --access public
-        working-directory: ${{ env.BUILD_PATH }}
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish Package to NPM
+      #   run: npm publish --provenance --access public
+      #   working-directory: ${{ env.BUILD_PATH }}
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
