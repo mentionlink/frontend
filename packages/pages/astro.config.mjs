@@ -20,9 +20,6 @@ export default defineConfig({
       label: "Intro",
       autogenerate: { directory: "intro" },
     }, {
-      label: "Demo",
-      autogenerate: { directory: "demo" },
-    }, {
       label: "Setup",
       autogenerate: { directory: "setup" },
     }, {
