@@ -15,7 +15,7 @@ interface Window { mentionads?: boolean; }
 
 (function () {
   const name = "Mention Ads";
-  const version = "1.0.0";
+  const version = "1.0.3";
   console.info(name, `v${version}`, "https://mentionads.com/changelog");
 
   if (window.mentionads) {

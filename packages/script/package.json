@@ -1,6 +1,6 @@
 {
   "name": "@mentionads/script",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "PolyForm-Shield-1.0.0",
   "scripts": {
     "lint": "eslint",
@@ -10,12 +10,12 @@
     "serve": "cp test/*.html out/ && esbuild src/script.ts --sourcemap --bundle --outdir=out --servedir=out --serve=9000"
   },
   "dependencies": {
-    "@playwright/test": "^1.45.3",
-    "@types/node": "^22.10.1",
-    "esbuild": "^0.23.0",
-    "eslint": "^9.16.0",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.16.0"
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.1",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.20.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.23.0"
   },
   "repository": {
     "type": "git",
