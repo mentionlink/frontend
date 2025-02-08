@@ -5,8 +5,6 @@
 name: Pages
 on:
   push:
-    branches:
-      - main
     paths:
       - .github/workflows/pages.yml
       - packages/pages/**
