@@ -7,7 +7,7 @@
   "waitFor": "postCreateCommand",
   "postAttachCommand": {
     "pages": "cd packages/pages && npm run dev",
-    "script": "cd packages/script && npm run watch"
+    "script": "cd packages/script && npm run serve"
   },
   "forwardPorts": [
     4321,
@@ -29,6 +29,9 @@
       ]
     },
     "vscode": {
+      "settings": {
+        "editor.fontFamily": "monospace"
+      },
       "extensions": [
         "astro-build.astro-vscode",
         "ms-azuretools.vscode-docker",
