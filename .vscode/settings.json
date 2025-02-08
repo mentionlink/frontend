@@ -10,6 +10,7 @@
   ],
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
+  "diffEditor.renderSideBySide": false,
   "files.trimTrailingWhitespace": true,
   "files.exclude": {
     "**/node_modules": true,
