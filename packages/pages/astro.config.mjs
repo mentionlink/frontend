@@ -13,6 +13,9 @@ export default defineConfig({
     social: {
       github: "https://github.com/mentionads/frontend"
     },
+    editLink: {
+      baseUrl: "https://github.com/mentionads/frontend/edit/main/packages/pages"
+    },
     sidebar: [{
       label: "Intro",
       items: [
