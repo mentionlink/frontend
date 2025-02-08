@@ -3,7 +3,7 @@
 # that can be found in the LICENSE.md file at the root of this repository.
 
 user-agent: *
-allow: /
+disallow: /
 disallow: /cdn-cgi/
 disallow: /patent/
 
