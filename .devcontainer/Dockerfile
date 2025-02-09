@@ -11,4 +11,7 @@ FROM mcr.microsoft.com/devcontainers/javascript-node:1-18
 RUN npm install --global @playwright/test
 RUN npx playwright install --with-deps
 
+RUN apt-get update && \
+  apt-get install --yes git git-lfs tree
+
 COPY welcome.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt
