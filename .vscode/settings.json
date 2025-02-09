@@ -1,4 +1,5 @@
 {
+  "diffEditor.renderSideBySide": false,
   "editor.fontFamily": "'Berkeley Mono', 'JetBrains Mono', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 15,
@@ -10,11 +11,11 @@
   ],
   "editor.tabSize": 2,
   "editor.wordWrap": "on",
-  "diffEditor.renderSideBySide": false,
   "files.trimTrailingWhitespace": true,
   "files.exclude": {
     "**/node_modules": true,
   },
+  "git.autofetch": true,
   "search.exclude": {
     "**/node_modules": true,
     "**/package-lock.json": true
