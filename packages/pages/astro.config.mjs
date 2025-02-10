@@ -17,8 +17,8 @@ export default defineConfig({
       baseUrl: "https://github.com/mentionads/frontend/edit/main/packages/pages"
     },
     sidebar: [{
-      label: "Intro",
-      autogenerate: { directory: "intro" },
+      label: "Start Here",
+      autogenerate: { directory: "start" },
     }, {
       label: "Setup",
       autogenerate: { directory: "setup" },
