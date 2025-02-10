@@ -17,6 +17,12 @@ export default defineConfig({
       baseUrl: "https://github.com/mentionads/frontend/edit/main/packages/pages"
     },
     sidebar: [{
+      label: "Login",
+      link: "https://app.mentionads.com/login",
+      attrs: {
+        target: "_blank"
+      }
+    }, {
       label: "Start Here",
       autogenerate: { directory: "start" },
     }, {
