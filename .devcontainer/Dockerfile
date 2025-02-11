@@ -12,6 +12,8 @@ RUN npm install --global @playwright/test
 RUN npx playwright install --with-deps
 
 RUN apt-get update && \
-  apt-get install --yes git git-lfs tree
+  apt-get install --yes curl git git-lfs tree
+
+RUN curl -fsSL https://d2lang.com/install.sh | sh -s --
 
 COPY welcome.txt /usr/local/etc/vscode-dev-containers/first-run-notice.txt
