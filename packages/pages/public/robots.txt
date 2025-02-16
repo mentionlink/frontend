@@ -4,6 +4,5 @@
 
 user-agent: *
 disallow: /
-disallow: /cdn-cgi/
 
 sitemap: https://www.mentionads.com/sitemap-index.xml
