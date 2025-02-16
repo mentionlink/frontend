@@ -5,6 +5,5 @@
 user-agent: *
 disallow: /
 disallow: /cdn-cgi/
-disallow: /patent/
 
 sitemap: https://www.mentionads.com/sitemap-index.xml
