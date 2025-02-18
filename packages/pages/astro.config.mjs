@@ -18,7 +18,7 @@ export default defineConfig({
     },
     sidebar: [{
       label: "Login",
-      link: "https://app.mentionads.com/login",
+      link: "https://app.mentionads.com/accounts/login/",
       attrs: {
         target: "_blank"
       }
