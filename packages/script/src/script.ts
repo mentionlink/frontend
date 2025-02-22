@@ -16,7 +16,7 @@ interface Window { mentionads?: boolean; }
 (function () {
   const name = "Mention Ads";
   const version = "1.0.3";
-  console.info(name, `v${version}`, "https://mentionads.com/changelog");
+  console.info(name, `v${version}`, "https://www.mentionads.com/changelog");
 
   if (window.mentionads) {
     console.warn(name, "E00", "The script is already running.");
