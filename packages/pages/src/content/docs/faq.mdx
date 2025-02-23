@@ -2,23 +2,31 @@
 # Copyright 2024 Mention Ads. All rights reserved.
 # Use of this source code is governed by the PolyForm Shield 1.0.0 license
 # that can be found in the LICENSE.md file at the root of this repository.
-title: Frequently Asked Questions
+title: Frequently asked questions (FAQ)
 description: A collection of frequently asked questions when it comes to using the Mention Ads script.
 ---
 
 ## Performance
 
 <details>
-<summary>Will adding the Mention Ads script slow down my website?</summary>
-No.
+<summary>Will adding the script slow down my website?</summary>
+**No.**
 The `defer` attribute guarantees that not only the script is not downloaded before the page finished loading, but also that it won't execute until the page is fully loaded.
+</details>
+
+## Search engine optimization (SEO)
+
+<details>
+<summary>Will adding the script impact my search engine optimization (SEO)?</summary>
+**No.**
+All affiliate links added by Mention Ads have `rel="nofollow"`, thus search engines will ignore these outgoing links.
 </details>
 
 ## Cookies
 
 <details>
 <summary>Do I need to include Mention Ads in a cookie consent banner?</summary>
-No.
+**No.**
 Mention Ads does **not** send any cookies.  This can be confirmed by seeing that the `fetch` call in the script does not set `"credentials": "include"` in the payload.  Please read the [MDN documentation on Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for more information.
 
 Furthemore, the HTTP preflight (Cross-Origin Resource Sharing) CORS request does not reply with the HTTP header `Access-Control-Allow-Credentials: true`, thus the browser will not allow the endpoint to set any cookies for the root domain or subdomains of `mentionads.com`.  This can be confirmed by using the DevTools in Chrome.  Please read the [MDN documentation on Access-Control-Allow-Credentials](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials) for more information.
