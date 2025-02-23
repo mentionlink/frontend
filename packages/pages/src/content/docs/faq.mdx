@@ -14,6 +14,14 @@ description: A collection of frequently asked questions when it comes to using t
 The `defer` attribute guarantees that not only the script is not downloaded before the page finished loading, but also that it won't execute until the page is fully loaded.
 </details>
 
+<details>
+<summary>How large is the script?</summary>
+The script is very small, about 2KB; it's both minified and Brotli-compressed.
+GZip compression is also offered for browsers that don't support Brotli.
+Through the [GitHub CI/CD pipeline](https://github.com/mentionads/frontend/blob/main/.github/workflows/script.yml), the script is uploaded to an R2 bucket.
+Then, the script is served through the content delivery network (CDN) of Cloudflare, which is mapped to `cdn.mentionads.com`.
+</details>
+
 ## Security
 
 <details>
