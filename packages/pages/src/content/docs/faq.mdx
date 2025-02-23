@@ -14,6 +14,17 @@ description: A collection of frequently asked questions when it comes to using t
 The `defer` attribute guarantees that not only the script is not downloaded before the page finished loading, but also that it won't execute until the page is fully loaded.
 </details>
 
+## Security
+
+<details>
+<summary>Will adding the script put my website at risk?</summary>
+**No.**
+All affiliate links added by Mention Ads have `target="_blank"`, thus `window.opener` will return `null`.
+This approach instructs the browser to naviate to the e-commerce store without granting the new browsing context access to your website through the `window.opener` property on the opened window.
+Please read the [MDN documentation on `rel="noopener"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/noopener) for more information; please note that `rel="noopener"` is the equivalent of not setting `target="_blank"` so that the link opens in the same tab.
+Mention Ads prefers to open affiliate links in new tabs, thus setting `target="_blank"` will suffice.
+</details>
+
 ## Search engine optimization (SEO)
 
 <details>
