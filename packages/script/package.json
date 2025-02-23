@@ -9,7 +9,7 @@
     "minify": "esbuild out/script.js --minify --sourcemap --outfile=out/script.min.js",
     "serve": "mkdir -p out && cp test/*.html out && esbuild src/script.ts --sourcemap --bundle --outdir=out --servedir=out --serve=9000"
   },
-  "dependencies": {
+  "devDependencies": {
     "@playwright/test": "^1.50.1",
     "@types/node": "^22.13.1",
     "esbuild": "^0.25.0",
