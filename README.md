@@ -4,4 +4,18 @@
 ![script workflow](https://github.com/mentionads/frontend/actions/workflows/script.yml/badge.svg)
 [![0 dependencies!](https://0dependencies.dev/0dependencies.svg)](https://github.com/mentionads/frontend/blob/main/packages/script/package.json)
 
-Please visit <https://mentionads.com> for more information.
+Please visit <https://www.mentionads.com> for more information.
+
+## Installation
+
+```html
+<head>
+  <title>My title</title>
+  <meta name="description" content="My description">
+  <!-- add the following line to every page on your website -->
+  <script async data-domain="example.com" src="https://cdn.mentionads.com/v1/script.min.js"></script>
+</head>
+<body>
+  <p>The iPhone 16 Pro has a new camera button.</p>
+</body>
+```
