@@ -8,7 +8,7 @@ FROM mcr.microsoft.com/devcontainers/javascript-node:1-18
 # System Settings > Screen Time > Content & Privacy Restrictions
 # and restart your Mac.
 
-RUN npm install --global @playwright/test
+RUN npm install --global @playwright/test svgo
 RUN npx playwright install --with-deps
 
 RUN apt-get update && \
