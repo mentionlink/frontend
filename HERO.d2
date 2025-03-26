@@ -6,10 +6,7 @@
 # d2 --sketch --theme=200 HERO.d2 packages/pages/src/assets/hero.dark.svg
 # svgo packages/pages/src/assets/hero.light.svg packages/pages/src/assets/hero.dark.svg
 
-Web Page -> Mention Ads: {style.animated: true}
-
-Mention Ads -> Affiliate Links: {style.animated: true}
-
-Affiliate Links -> Web Page: {style.animated: true}
-
-Web Page.shape: page
+Render Web Page.shape: page
+Render Web Page -> Detect Product Mentions: {style.animated: true}
+Detect Product Mentions -> Insert Affiliate Links: {style.animated: true}
+Insert Affiliate Links -> Render Web Page: {style.animated: true}
