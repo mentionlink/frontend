@@ -6,12 +6,33 @@ title: Setup
 description: Use the WordPress guide to setup Mention Ads script if you run a WordPress site, otherwise use the generic guide.
 ---
 
-## Setup
-
-### Generic Setup
-
-Please see the [generic setup instructions](/setup/generic/).
-
-### WordPress Setup
+## WordPress Setup
 
 Please see the [WordPress setup instructions](/setup/wordpress/).
+
+## Generic Setup
+
+Add the following line inside the `<head>` tag, just before the `</head>` tag closes.
+
+:::note
+You must replace `example.com` in the `data-domain` attribute with your own custom domain name.
+Do not prefix your domain with `www.` even if your website is configured to run on `www.example.com`.
+:::
+
+```diff lang="html"
+<head>
+  <title>My title</title>
+  <meta name="description" content="My description">
++  <script async data-domain="example.com" src="https://cdn.mentionads.com/v1/script.min.js"></script>
+</head>
+```
+
+### Questions?
+
+Please read the [frequently asked questions](/faq/).
+
+### Test your installation
+
+You can test your installation by adding the URL fragment to a page from your website, i.e. `#mentionads=debug`.
+Open DevTools in Chrome and you should see a success message being logged.
+If you are having trouble confirming that your installation was successful, please reach out to [help@mentionads.com](mailto:help@mentionads.com).
