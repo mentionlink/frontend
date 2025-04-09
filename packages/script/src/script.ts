@@ -34,7 +34,7 @@ interface Window { mentionads?: boolean; }
   const demo = hash.includes("mentionads=demo") || config.includes("demo");
   const cache = !hash.includes("mentionads=cacheoff") && !config.includes("cacheoff");
 
-  const searchURL = "https://api.mentionads.com/v1/search";
+  const magicURL = "https://api.mentionads.com/v1/magic";
   const clickURL = "https://api.mentionads.com/v1/click";
   const attribute = "data-mentionads";
 
@@ -149,7 +149,7 @@ interface Window { mentionads?: boolean; }
           .filter(text => text.length > 0),
         cache,
       };
-      const response = await fetch(searchURL +
+      const response = await fetch(magicURL +
         "?ref=" + encodeURIComponent(document.location.href), {
         // credentials: "include", // commented out, thus does NOT send cookies
         headers: {
