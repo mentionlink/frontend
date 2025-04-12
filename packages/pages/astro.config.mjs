@@ -23,24 +23,19 @@ export default defineConfig({
         target: "_blank"
       }
     }, {
-      label: "Demos",
-      items: [
-        'demos',
-        'demos/beauty',
-        'demos/recipe',
-        'demos/medical',
-        'demos/technical',
-        'demos/custom'
-      ]
-    }, {
       label: "Start Here",
       autogenerate: { directory: "start" },
     }, {
+      label: "Demos",
+      autogenerate: { directory: "demos" },
+    }, {
       label: "Setup",
       autogenerate: { directory: "setup" },
+      collapsed: true,
     }, {
       label: "Config",
       autogenerate: { directory: "config" },
+      collapsed: true,
     }, {
       label: "FAQ",
       slug: "faq",
