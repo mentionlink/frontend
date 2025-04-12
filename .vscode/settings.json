@@ -25,4 +25,9 @@
   "json.format.enable": true,
   "html.format.enable": true,
   "D2.previewSketch": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Succinctly summarize the changes. Use sentence case. Do not use emojis."
+    }
+  ]
 }
