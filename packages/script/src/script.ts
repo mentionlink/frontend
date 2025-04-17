@@ -151,7 +151,6 @@ interface Window { mentionads?: boolean; }
       };
       const response = await fetch(magicURL +
         "?ref=" + encodeURIComponent(document.location.href), {
-        // credentials: "include", // commented out, thus does NOT send cookies
         headers: {
           "content-type": utf8JSON,
         },
