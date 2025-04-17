@@ -61,11 +61,13 @@ interface Window { mentionads?: boolean; }
     alt?: string;
   };
   interface IResponseBody {
+    success: boolean;
     rewrites: IRewrite[],
     mentions: IMention[],
   };
   //#endregion
   const defaultResponseBody = (): IResponseBody => ({
+    success: false,
     rewrites: [],
     mentions: [],
   });
@@ -152,6 +154,7 @@ interface Window { mentionads?: boolean; }
       const response = await fetch(magicURL +
         "?ref=" + encodeURIComponent(document.location.href), {
         headers: {
+          "accept": utf8JSON,
           "content-type": utf8JSON,
         },
         method: "POST",
