@@ -195,12 +195,13 @@ interface Window { mentionads?: boolean; }
 
     const link = (mention: IMention) => {
       const { text, title, url } = mention;
+      const lowercasedSubstring = text.toLowerCase();
 
       // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       const iterator = document.createNodeIterator(
         document.body,
         NodeFilter.SHOW_TEXT,
-        (node: Node) => (node as Text).wholeText.includes(text) &&
+        (node: Node) => (node as Text).wholeText.toLowerCase().includes(lowercasedSubstring) &&
           ["ABBR", "B", "BLOCKQUOTE", "CITE", "EM", "FIGCAPTION", "I", "LI", "MARK", "OL", "P", "Q", "SMALL", "SPAN", "STRONG", "U", "UL"]
             .includes(node.parentElement?.tagName ?? "") &&
           node.parentElement?.closest("[data-mentionads-ignore]") === null
@@ -219,7 +220,7 @@ interface Window { mentionads?: boolean; }
         node.parentNode?.normalize();
 
         // Finds matches in the lowercased text nodes.
-        const start = node.wholeText.toLowerCase().indexOf(text);
+        const start = node.wholeText.toLowerCase().indexOf(lowercasedSubstring);
         console.assert(start >= 0, name, "E30", text, node.wholeText);
 
         const link = document.createElement("a");
