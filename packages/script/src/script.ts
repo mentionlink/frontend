@@ -218,7 +218,8 @@ interface Window { mentionads?: boolean; }
         // its neighbors; otherwise, the offset used by the range is incorrect.
         node.parentNode?.normalize();
 
-        const start = node.wholeText.indexOf(text);
+        // Finds matches in the lowercased text nodes.
+        const start = node.wholeText.toLowerCase().indexOf(text);
         console.assert(start >= 0, name, "E30", text, node.wholeText);
 
         const link = document.createElement("a");
