@@ -7,7 +7,7 @@
     "build": "esbuild src/script.ts --sourcemap --bundle --outdir=out",
     "watch": "esbuild src/script.ts --sourcemap --bundle --outdir=out --watch",
     "minify": "esbuild out/script.js --minify --sourcemap --outfile=out/script.min.js",
-    "serve": "mkdir -p out && cp test/*.html out && esbuild src/script.ts --sourcemap --bundle --outdir=out --servedir=out --serve=9000"
+    "serve": "mkdir -p out && cp test/*.html out && esbuild src/script.ts --sourcemap --bundle --outdir=out --servedir=out --serve=0.0.0.0:9000"
   },
   "devDependencies": {
     "@playwright/test": "^1.50.1",
