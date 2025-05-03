@@ -10,11 +10,11 @@ test.beforeEach(async ({ page }) => {
     json: {
       rewrites: [],
       mentions: [{
-        text: "Google Pixel 9 Pro",
+        substring: "Google Pixel 9 Pro",
         title: "Google Pixel 9 Pro",
         url: "https://www.google.com",
       }, {
-        text: "Apple iPhone 16 Pro",
+        substring: "Apple iPhone 16 Pro",
         title: "Apple iPhone 16 Pro",
         url: "https://www.apple.com",
       }],
