@@ -42,7 +42,7 @@ interface Window { mentionads?: boolean; }
   const space = " ";
 
   //#region interfaces
-  // https://api.mentionads.com/spec.html
+  // https://api.mentionads.com/spec
   // https://api.mentionads.com/spec.json
   interface IRequestBody {
     version: string;
