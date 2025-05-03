@@ -55,7 +55,7 @@ interface Window { mentionads?: boolean; }
     to: string;
   };
   interface IMention {
-    text: string;
+    substring: string;
     title: string;
     url: string;
     alt?: string;
@@ -194,8 +194,8 @@ interface Window { mentionads?: boolean; }
     };
 
     const link = (mention: IMention) => {
-      const { text, title, url } = mention;
-      const lowercasedSubstring = text.toLowerCase();
+      const { substring, title, url } = mention;
+      const lowercasedSubstring = substring.toLowerCase();
 
       // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       const iterator = document.createNodeIterator(
@@ -221,7 +221,7 @@ interface Window { mentionads?: boolean; }
 
         // Finds matches in the lowercased text nodes.
         const start = node.wholeText.toLowerCase().indexOf(lowercasedSubstring);
-        console.assert(start >= 0, name, "E30", text, node.wholeText);
+        console.assert(start >= 0, name, "E30", substring, node.wholeText);
 
         const link = document.createElement("a");
         link.title = title;
@@ -242,7 +242,7 @@ interface Window { mentionads?: boolean; }
 
         const range = document.createRange();
         range.setStart(node, start);
-        range.setEnd(node, start + text.length);
+        range.setEnd(node, start + substring.length);
         range.surroundContents(link);
 
         if (debug || demo) {
