@@ -47,7 +47,7 @@ interface Window { mentionads?: boolean; }
   interface IRequestBody {
     version: string;
     domain: string;
-    text: string;
+    body: string;
     texts?: string[];
     cache?: boolean;
   };
@@ -145,7 +145,7 @@ interface Window { mentionads?: boolean; }
       const requestBody: IRequestBody = {
         version,
         domain,
-        text: document.body.innerText,
+        body: document.body.innerText,
         texts: Array.from(document.body.getElementsByTagName("p"))
           .filter(element => element.closest("[data-mentionads-ignore]") === null)
           .map(element => element.innerText)
