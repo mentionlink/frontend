@@ -152,8 +152,8 @@ interface Window { mentionads?: boolean; }
   };
 
   let oldBody = "";
-  const observe = () => {
-    const observer = new MutationObserver(debounce(
+  const observe = (): void => {
+    new MutationObserver(debounce(
       (_: MutationRecord[], observer: MutationObserver) => {
         const newBody = document.body.innerText;
         observer.disconnect();
@@ -162,12 +162,11 @@ interface Window { mentionads?: boolean; }
           console.debug(name, "significant body change detected");
           main();
         }
-      }));
-    observer.observe(document.body, {
-      subtree: true,
-      childList: true,
-      characterData: true,
-    });
+      })).observe(document.body, {
+        subtree: true,
+        childList: true,
+        characterData: true,
+      });
   };
 
   const main = async () => {
