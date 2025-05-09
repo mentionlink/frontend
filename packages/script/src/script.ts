@@ -41,6 +41,8 @@ interface Window { mentionads?: boolean; }
   const utf8JSON = "application/json;charset=utf-8";
   const space = " ";
 
+  const jaccardThreshold = 0.8;
+
   //#region interfaces
   // https://api.mentionads.com/spec
   // https://api.mentionads.com/spec.json
@@ -81,6 +83,13 @@ interface Window { mentionads?: boolean; }
       window.clearTimeout(timeout);
       timeout = window.setTimeout(() => callback(...args), wait);
     };
+  };
+
+  const jaccard = (str1: string, str2: string) => {
+    const set1 = new Set(str1.toLowerCase().split(/\s+/).filter(w => w.length > 0));
+    const set2 = new Set(str2.toLowerCase().split(/\s+/).filter(w => w.length > 0));
+
+    return set1.intersection(set2).size / set1.union(set2).size;
   };
 
   const insert = (element: HTMLElement, text: string, append: boolean): Promise<void> => {
@@ -141,12 +150,18 @@ interface Window { mentionads?: boolean; }
     }
   };
 
+  let oldBody = "";
   const observe = () => {
-    const observer = new MutationObserver(debounce((_: MutationRecord[], observer: MutationObserver) => {
-      observer.disconnect();
-      console.debug(name, "dom changed");
-      main();
-    }));
+    const observer = new MutationObserver(debounce(
+      (_: MutationRecord[], observer: MutationObserver) => {
+        const newBody = document.body.innerText;
+        observer.disconnect();
+
+        if (jaccard(oldBody, newBody) <= jaccardThreshold) {
+          console.debug(name, "significant body change detected");
+          main();
+        }
+      }));
     observer.observe(document.body, {
       subtree: true,
       childList: true,
@@ -155,6 +170,8 @@ interface Window { mentionads?: boolean; }
   };
 
   const main = async () => {
+    oldBody = document.body.innerText;
+
     let responseBody: IResponseBody;
     try {
       const requestBody: IRequestBody = {

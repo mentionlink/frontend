@@ -17,7 +17,10 @@
   <script>
     window.setTimeout(() => {
       const p = document.createElement("p");
-      p.textContent = "Here are ten more words added after five seconds delay.";
+      for (let i = 0; i < 20; i++) {
+        p.appendChild(document.createTextNode(`word ${i} `));
+      }
+
       document.body.appendChild(p);
     }, 5e3);
   </script>

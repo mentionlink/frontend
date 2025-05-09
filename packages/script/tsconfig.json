@@ -3,11 +3,11 @@
     "src/**/*.ts"
   ],
   "compilerOptions": {
-    "target": "ES2016",
+    "target": "esnext",
     // https://www.typescriptlang.org/tsconfig/#lib
     "lib": [
-      "DOM",
-      "ES2016" // array.includes()
+      "dom",
+      "esnext"
     ]
   }
 }
