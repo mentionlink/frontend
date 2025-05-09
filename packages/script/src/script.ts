@@ -85,6 +85,7 @@ interface Window { mentionads?: boolean; }
     };
   };
 
+  // Calculates the Jaccard similarity between two strings.
   const jaccard = (str1: string, str2: string) => {
     const set1 = new Set(str1.toLowerCase().split(/\s+/).filter(w => w.length > 0));
     const set2 = new Set(str2.toLowerCase().split(/\s+/).filter(w => w.length > 0));
