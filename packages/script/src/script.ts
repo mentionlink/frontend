@@ -73,13 +73,15 @@ interface Window { mentionads?: boolean; }
     mentions: [],
   });
 
-  // const debounce = (callback: Function, wait: number = 1e3) => {
-  //   let timeout: number;
-  //   return (...args: any[]) => {
-  //     clearTimeout(timeout);
-  //     timeout = setTimeout(() => callback(...args), wait);
-  //   };
-  // };
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+  const debounce = (callback: Function, wait: number = 1e3) => {
+    let timeout: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (...args: any[]) => {
+      window.clearTimeout(timeout);
+      timeout = window.setTimeout(() => callback(...args), wait);
+    };
+  };
 
   const insert = (element: HTMLElement, text: string, append: boolean): Promise<void> => {
     if (demo) {
@@ -137,6 +139,19 @@ interface Window { mentionads?: boolean; }
         element.prepend(text);
       }
     }
+  };
+
+  const observe = () => {
+    const observer = new MutationObserver(debounce((_: MutationRecord[], observer: MutationObserver) => {
+      observer.disconnect();
+      console.debug(name, "dom changed");
+      main();
+    }));
+    observer.observe(document.body, {
+      subtree: true,
+      childList: true,
+      characterData: true,
+    });
   };
 
   const main = async () => {
@@ -263,6 +278,8 @@ interface Window { mentionads?: boolean; }
     for (const mention of mentions) {
       link(mention);
     }
+
+    observe();
   };
 
   if (["interactive", "complete"].includes(document.readyState)) {

@@ -21,6 +21,7 @@ concurrency:
 
 env:
   BUILD_PATH: packages/script
+  CI: true
 
 jobs:
   publish:
@@ -50,8 +51,6 @@ jobs:
       - name: Test Package
         run: npx playwright test
         working-directory: ${{ env.BUILD_PATH }}
-        env:
-          CI: true
       - uses: actions/upload-artifact@v4
         if: always()
         with:

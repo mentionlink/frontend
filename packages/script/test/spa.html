@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mention Ads SPA tests</title>
+  <script async data-domain="_default" src="/script.js"></script>
+</head>
+
+<body>
+  <h1>Google Pixel 9 Pro combines a powerful telephoto lens with advanced video processing.</h1>
+  <p>Apple iPhone 16 Pro is splash, water, and dust resistant.</p>
+
+  <div data-mentionads-ignore>
+    <p>Apple iPhone 16 Pro comes with artificial intelligence.</p>
+  </div>
+
+  <script>
+    window.setTimeout(() => {
+      const p = document.createElement("p");
+      p.textContent = "Here are ten more words added after five seconds delay.";
+      document.body.appendChild(p);
+    }, 5e3);
+  </script>
+</body>
+
+</html>
