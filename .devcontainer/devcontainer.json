@@ -5,10 +5,10 @@
   },
   "postCreateCommand": ".devcontainer/setup.sh",
   "waitFor": "postCreateCommand",
-  "postAttachCommand": {
-    "pages": "cd packages/pages && npm run dev",
-    "script": "cd packages/script && npm run serve"
-  },
+  // "postAttachCommand": {
+  //   "pages": "cd packages/pages && npm run dev",
+  //   "script": "cd packages/script && npm run serve"
+  // },
   "forwardPorts": [
     4321,
     9000
