@@ -5,4 +5,4 @@
 user-agent: *
 disallow: /
 
-sitemap: https://www.mentionads.com/sitemap-index.xml
+sitemap: https://docs.mentionads.com/sitemap-index.xml

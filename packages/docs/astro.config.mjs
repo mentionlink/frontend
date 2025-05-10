@@ -7,14 +7,14 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.mentionads.com",
+  site: "https://docs.mentionads.com",
   integrations: [starlight({
     title: "Mention Ads",
     social: {
       github: "https://github.com/mentionads/frontend"
     },
     editLink: {
-      baseUrl: "https://github.com/mentionads/frontend/edit/main/packages/pages"
+      baseUrl: "https://github.com/mentionads/frontend/edit/main/packages/docs"
     },
     sidebar: [{
       label: "Login",

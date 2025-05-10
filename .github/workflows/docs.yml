@@ -2,14 +2,14 @@
 # Use of this source code is governed by the PolyForm Shield 1.0.0 license
 # that can be found in the LICENSE.md file at the root of this repository.
 
-name: Pages
+name: Docs
 on:
   push:
     branches:
       - main
     paths:
-      - .github/workflows/pages.yml
-      - packages/pages/**
+      - .github/workflows/docs.yml
+      - packages/docs/**
 
 permissions:
   contents: read
@@ -17,11 +17,11 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: docs
   cancel-in-progress: true
 
 env:
-  BUILD_PATH: packages/pages
+  BUILD_PATH: packages/docs
 
 jobs:
   build:
