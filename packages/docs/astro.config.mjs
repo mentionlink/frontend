@@ -26,9 +26,6 @@ export default defineConfig({
       label: "Start Here",
       autogenerate: { directory: "start" },
     }, {
-      label: "Demos",
-      autogenerate: { directory: "demos" },
-    }, {
       label: "Setup",
       autogenerate: { directory: "setup" },
       collapsed: true,
