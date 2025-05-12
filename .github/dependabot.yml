@@ -9,4 +9,4 @@ updates:
       - /packages/docs
       - /packages/script
     schedule:
-      interval: weekly
+      interval: monthly
