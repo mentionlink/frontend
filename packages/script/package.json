@@ -4,6 +4,7 @@
   "license": "PolyForm-Shield-1.0.0",
   "scripts": {
     "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "build": "esbuild src/script.ts --sourcemap --bundle --outdir=out",
     "watch": "esbuild src/script.ts --sourcemap --bundle --outdir=out --watch",
     "minify": "esbuild out/script.js --minify --sourcemap --outfile=out/script.min.js",
