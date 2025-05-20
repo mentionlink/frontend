@@ -35,7 +35,7 @@ interface Window { mentionads?: boolean; }
   const cache = !hash.includes("mentionads=cacheoff") && !config.includes("cacheoff");
 
   const magicURL = "https://api.mentionads.com/v1/magic";
-  const clickURL = "https://api.mentionads.com/v1/click";
+  // const clickURL = "https://api.mentionads.com/v1/click";
   const attribute = "data-mentionads";
 
   const utf8JSON = "application/json;charset=utf-8";
