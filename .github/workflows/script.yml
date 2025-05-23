@@ -13,7 +13,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: script
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   BUILD_PATH: packages/script

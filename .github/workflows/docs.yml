@@ -15,7 +15,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: docs
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   BUILD_PATH: packages/docs
