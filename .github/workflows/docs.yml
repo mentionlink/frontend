@@ -16,7 +16,6 @@ permissions:
 
 concurrency:
   group: docs
-  cancel-in-progress: true
 
 env:
   BUILD_PATH: packages/docs
