@@ -5,8 +5,6 @@
 name: Docs
 on:
   push:
-    branches:
-      - main
     paths:
       - .github/workflows/docs.yml
       - packages/docs/**
@@ -55,6 +53,7 @@ jobs:
           path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     environment:
       name: github-pages
