@@ -10,9 +10,11 @@ export default defineConfig({
   site: "https://docs.mentionads.com",
   integrations: [starlight({
     title: "Mention Ads",
-    social: {
-      github: "https://github.com/mentionads/frontend"
-    },
+    social: [{
+      icon: "github",
+      label: "GitHub",
+      href: "https://github.com/mentionads/frontend"
+    }],
     editLink: {
       baseUrl: "https://github.com/mentionads/frontend/edit/main/packages/docs"
     },
