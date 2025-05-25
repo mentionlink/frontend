@@ -24,9 +24,8 @@ interface Window { mentionads?: boolean; }
   }
   window.mentionads = true;
 
-  const { body, location: { hash, host } } = document;
+  const { body, location: { hash } } = document;
   const script = document.querySelector("script[src^='https://cdn.mentionads.com']");
-  const domain = script?.getAttribute("data-domain") ?? host;
   const config = script?.getAttribute("data-config")
     ?? body?.getAttribute("data-mentionads")
     ?? "";
@@ -48,7 +47,7 @@ interface Window { mentionads?: boolean; }
   // https://api.mentionads.com/spec.json
   interface IRequestBody {
     version: string;
-    domain: string;
+    url: string;
     body: string;
     texts?: string[];
     cache?: boolean;
@@ -176,7 +175,7 @@ interface Window { mentionads?: boolean; }
     try {
       const requestBody: IRequestBody = {
         version,
-        domain,
+        url: document.location.href,
         body: document.body.innerText,
         texts: Array.from(document.body.getElementsByTagName("p"))
           .filter(element => element.closest("[data-mentionads-ignore]") === null)
@@ -184,8 +183,7 @@ interface Window { mentionads?: boolean; }
           .filter(text => text.length > 0),
         cache,
       };
-      const response = await fetch(magicURL +
-        "?ref=" + encodeURIComponent(document.location.href), {
+      const response = await fetch(magicURL, {
         headers: {
           "accept": utf8JSON,
           "content-type": utf8JSON,

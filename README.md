@@ -11,7 +11,7 @@
   <title>My title</title>
   <meta name="description" content="My description">
   <!-- TODO: Add the following line to every page on your website. -->
-  <script async data-domain="example.com" src="https://cdn.mentionads.com/v1/script.min.js"></script>
+  <script async src="https://cdn.mentionads.com/v1/script.min.js"></script>
 </head>
 <body>
   <p>The iPhone 16 Pro has a new camera button.</p>
