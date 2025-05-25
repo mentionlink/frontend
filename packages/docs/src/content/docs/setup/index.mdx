@@ -14,16 +14,11 @@ Please see the [WordPress setup instructions](/setup/wordpress/).
 
 Add the following line inside the `<head>` tag, just before the `</head>` tag closes.
 
-:::note
-You must replace `example.com` in the `data-domain` attribute with your own custom domain name.
-Do not prefix your domain with `www.` even if your website is configured to run on `www.example.com`.
-:::
-
 ```diff lang="html"
 <head>
   <title>My title</title>
   <meta name="description" content="My description">
-+  <script async data-domain="example.com" src="https://cdn.mentionads.com/v1/script.min.js"></script>
++  <script async src="https://cdn.mentionads.com/v1/script.min.js"></script>
 </head>
 ```
 
