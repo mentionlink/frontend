@@ -43,7 +43,7 @@ export default defineConfig({
       slug: "changelog",
     }],
     customCss: [
-      "@fontsource-variable/space-grotesk/index.css",
+      "@fontsource-variable/rubik/index.css",
       "@fontsource-variable/jetbrains-mono/index.css",
       "./src/themes/custom.css",
     ],
