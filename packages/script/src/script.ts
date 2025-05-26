@@ -44,8 +44,7 @@ interface Window { mentionads?: boolean; }
   const jaccardThreshold = 0.8;
 
   //#region interfaces
-  // https://api.mentionads.com/spec
-  // https://api.mentionads.com/spec.json
+  // https://api.mentionads.com/v1/spec.json?pretty
   interface IRequestBody {
     version: string;
     domain: string;
