@@ -14,15 +14,10 @@ description: A guide on how to setup the Mention Ads script onto a WordPress sit
 
 Then, add the following line inside the `<head>` tag, just before the `</head>` tag closes.
 
-:::note
-You must replace `example.com` in the `data-domain` attribute with your own custom domain name.
-Do not prefix your domain with `www.` even if your website is configured to run on `www.example.com`.
-:::
-
 ```diff lang="php"
 <head>
   <?php wp_head(); ?>
-+  <script async data-domain="example.com" src="https://cdn.mentionads.com/v1/script.min.js"></script>
++  <script async src="https://cdn.mentionads.com/v1/script.min.js"></script>
 </head>
 ```
 
