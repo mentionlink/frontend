@@ -14,7 +14,7 @@
     "@astrojs/starlight": "^0.34.3",
     "astro": "^5.8.0",
     "@fontsource-variable/jetbrains-mono": "^5.2.5",
-    "@fontsource-variable/space-grotesk": "^5.2.7"
+    "@fontsource-variable/rubik": "^5.2.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
