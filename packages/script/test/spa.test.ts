@@ -4,14 +4,14 @@
 
 import { test, expect } from "@playwright/test";
 
-let magicRouteCallCount: number;
+let apiCallCount: number;
 
 test.beforeEach(async ({ page }) => {
-  magicRouteCallCount = 0;
+  apiCallCount = 0;
 
   // https://mentionads.com/spec.json
   await page.route(/v1/, route => {
-    magicRouteCallCount++;
+    apiCallCount++;
 
     return route.fulfill({
       json: {
@@ -39,5 +39,5 @@ test("if route is called multiple times", async ({ page }) => {
   // Waits twice as much as the timeout in the script.
   await page.waitForTimeout(10e3);
 
-  expect(magicRouteCallCount).toBe(2);
+  expect(apiCallCount).toBe(2);
 });

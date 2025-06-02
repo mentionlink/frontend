@@ -33,7 +33,7 @@ interface Window { mentionads?: boolean; }
   const demo = hash.includes("mentionads=demo") || config.includes("demo");
   const cache = !hash.includes("mentionads=cacheoff") && !config.includes("cacheoff");
 
-  const magicURL = "https://api.mentionads.com/v1/magic";
+  const pageURL = "https://api.mentionads.com/v1/page";
   // const clickURL = "https://api.mentionads.com/v1/click";
   const attribute = "data-mentionads";
 
@@ -183,7 +183,7 @@ interface Window { mentionads?: boolean; }
           .filter(text => text.length > 0),
         cache,
       };
-      const response = await fetch(magicURL, {
+      const response = await fetch(pageURL, {
         headers: {
           "accept": utf8JSON,
           "content-type": utf8JSON,
