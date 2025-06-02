@@ -2,7 +2,7 @@
 # Use of this source code is governed by the PolyForm Shield 1.0.0 license
 # that can be found in the LICENSE.md file at the root of this repository.
 
-FROM mcr.microsoft.com/devcontainers/javascript-node:1-18
+FROM mcr.microsoft.com/devcontainers/javascript-node:1-20
 
 # If on Mac, Docker builds may lead to hash sum mismatch errors; to fix, you must turn off:
 # System Settings > Screen Time > Content & Privacy Restrictions
