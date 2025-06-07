@@ -188,7 +188,7 @@ interface Window { mentionads?: boolean; }
         method: "POST",
         body: JSON.stringify(requestBody),
       });
-      if (!response.ok) {
+      if (response.status !== 200) {
         throw new Error(`HTTP ${response.status}`);
       }
 
