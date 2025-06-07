@@ -31,7 +31,6 @@ interface Window { mentionads?: boolean; }
     ?? "";
   const debug = hash.includes("mentionads=debug") || config.includes("debug");
   const demo = hash.includes("mentionads=demo") || config.includes("demo");
-  const cache = !hash.includes("mentionads=cacheoff") && !config.includes("cacheoff");
 
   const pageURL = "https://api.mentionads.com/v1/page";
   // const clickURL = "https://api.mentionads.com/v1/click";
@@ -50,7 +49,6 @@ interface Window { mentionads?: boolean; }
     url: string;
     body: string;
     texts?: string[];
-    cache?: boolean;
   };
   interface IRewrite {
     from: string;
@@ -181,7 +179,6 @@ interface Window { mentionads?: boolean; }
           .filter(element => element.closest("[data-mentionads-ignore]") === null)
           .map(element => element.innerText)
           .filter(text => text.length > 0),
-        cache,
       };
       const response = await fetch(pageURL, {
         headers: {
