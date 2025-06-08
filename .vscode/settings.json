@@ -16,7 +16,7 @@
     "**/node_modules": true,
   },
   "git.autofetch": true,
-  "git.useEditorAsCommitInput": true,
+  "git.useEditorAsCommitInput": false,
   "search.exclude": {
     "**/node_modules": true,
     "**/package-lock.json": true
