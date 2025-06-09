@@ -10,3 +10,5 @@ updates:
       - /packages/script
     schedule:
       interval: weekly
+    reviewers:
+      - jobsort
