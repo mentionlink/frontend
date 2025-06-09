@@ -12,12 +12,12 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.52.0",
-    "@types/node": "^22.15.29",
+    "@types/node": "^22.15.30",
     "esbuild": "^0.25.5",
     "eslint": "^9.28.0",
     "playwright": "^1.52.0",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.33.0"
+    "typescript-eslint": "^8.33.1"
   },
   "repository": {
     "type": "git",
