@@ -55,7 +55,7 @@ jobs:
           name: playwright-report
           path: ${{ env.BUILD_PATH }}/playwright-report
           retention-days: 30
-      - name: Install Rclone
+      - name: Install rclone
         if: github.ref == 'refs/heads/main'
         run: sudo apt-get install --yes rclone
       - name: Deploy Package
