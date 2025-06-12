@@ -69,8 +69,8 @@ jobs:
           rclone copyto out/script.min.js.map cloudflare:mentionads-cdn-prod/v1/script.min.js.map --config rclone.conf
         working-directory: ${{ env.BUILD_PATH }}
         env:
-          AWS_ACCESS_KEY: ${{ secrets.RCLONE_AWS_ACCESS_KEY }}
-          AWS_SECRET_KEY: ${{ secrets.RCLONE_AWS_SECRET_KEY }}
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
       # - name: Publish Package to NPM
       #   if: github.ref == 'refs/heads/main'
       #   run: npm publish --provenance --access public
