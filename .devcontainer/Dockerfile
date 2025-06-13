@@ -12,7 +12,7 @@ RUN npm install --global @playwright/test svgo
 RUN npx playwright install --with-deps
 
 RUN apt-get update && \
-  apt-get install --yes curl git git-lfs ripgrep tree wget
+  apt-get install --yes curl git git-lfs librsvg2-bin ripgrep tree wget
 
 RUN curl -fsSL https://d2lang.com/install.sh | sh -s --
 
