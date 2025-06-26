@@ -1,8 +1,7 @@
 {
   "diffEditor.renderSideBySide": false,
   "editor.inlineSuggest.fontFamily": "'Monaspace Krypton', monospace",
-  "editor.fontFamily": "'Monaspace Neon', 'Berkeley Mono', 'JetBrains Mono', monospace",
-  "editor.fontLigatures": "'calt', 'liga', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'ss09'",
+  "editor.fontFamily": "'JetBrains Mono', monospace",
   "editor.fontSize": 15,
   "editor.formatOnSave": true,
   "editor.insertSpaces": true,
