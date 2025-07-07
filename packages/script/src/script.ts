@@ -16,7 +16,7 @@ interface Window { mentionlink?: boolean; }
 (function () {
   const name = "Mentionlink";
   const version = "1.0.0";
-  console.info(name, `v${version}`, "https://www.mentionlink.com/changelog");
+  console.info(name, `v${version}`, "https://mentionlink.com/changelog");
 
   if (window.mentionlink) {
     console.warn(name, "E00", "The script is already running.");

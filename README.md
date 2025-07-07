@@ -18,4 +18,4 @@
 </body>
 ```
 
-Please visit <https://www.mentionlink.com/setup/> for more information.
+Please visit <https://mentionlink.com/setup/> for more information.
