@@ -5,7 +5,7 @@
 import { test, expect } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
-  // https://mentionads.com/spec.json
+  // https://mentionlink.com/spec.json
   await page.route(/v1/, route => route.fulfill({
     json: {
       rewrites: [],

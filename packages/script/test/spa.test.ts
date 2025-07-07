@@ -9,7 +9,7 @@ let apiCallCount: number;
 test.beforeEach(async ({ page }) => {
   apiCallCount = 0;
 
-  // https://mentionads.com/spec.json
+  // https://mentionlink.com/spec.json
   await page.route(/v1/, route => {
     apiCallCount++;
 

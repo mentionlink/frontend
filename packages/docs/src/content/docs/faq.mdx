@@ -19,7 +19,7 @@ The `defer` attribute guarantees that not only the script is not downloaded befo
 The script is very small, about 2KB; it's both minified and Brotli-compressed.
 GZip compression is also offered for browsers that don't support Brotli, although Brotli provides best compression in most scenarios.
 Through the [GitHub CI/CD pipeline](https://github.com/mentionads/frontend/blob/main/.github/workflows/script.yml), the script is uploaded to an R2 bucket.
-Then, the script is served through the content delivery network (CDN) of Cloudflare, which is mapped to `cdn.mentionads.com`.
+Then, the script is served through the content delivery network (CDN) of Cloudflare, which is mapped to `cdn.mentionlink.com`.
 </details>
 
 ## Security
@@ -48,5 +48,5 @@ All affiliate links added by Mentionlink have `rel="nofollow"`, thus search engi
 **No.**
 Mentionlink does **not** send any cookies.  This can be confirmed by seeing that the `fetch` call in the script does not set `"credentials": "include"` in the payload.  Please read the [MDN documentation on Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for more information.
 
-Furthemore, the HTTP preflight (Cross-Origin Resource Sharing) CORS request does not reply with the HTTP header `Access-Control-Allow-Credentials: true`, thus the browser will not allow the endpoint to set any cookies for the root domain or subdomains of `mentionads.com`.  This can be confirmed by using the DevTools in Chrome.  Please read the [MDN documentation on Access-Control-Allow-Credentials](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials) for more information.
+Furthemore, the HTTP preflight (Cross-Origin Resource Sharing) CORS request does not reply with the HTTP header `Access-Control-Allow-Credentials: true`, thus the browser will not allow the endpoint to set any cookies for the root domain or subdomains of `mentionlink.com`.  This can be confirmed by using the DevTools in Chrome.  Please read the [MDN documentation on Access-Control-Allow-Credentials](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials) for more information.
 </details>

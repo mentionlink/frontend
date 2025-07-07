@@ -16,7 +16,7 @@ interface Window { mentionads?: boolean; }
 (function () {
   const name = "Mentionlink";
   const version = "1.0.0";
-  console.info(name, `v${version}`, "https://www.mentionads.com/changelog");
+  console.info(name, `v${version}`, "https://www.mentionlink.com/changelog");
 
   if (window.mentionads) {
     console.warn(name, "E00", "The script is already running.");
@@ -25,15 +25,15 @@ interface Window { mentionads?: boolean; }
   window.mentionads = true;
 
   const { body, location: { hash } } = document;
-  const script = document.querySelector("script[src^='https://cdn.mentionads.com']");
+  const script = document.querySelector("script[src^='https://cdn.mentionlink.com']");
   const config = script?.getAttribute("data-config")
     ?? body?.getAttribute("data-mentionads")
     ?? "";
   const debug = hash.includes("mentionads=debug") || config.includes("debug");
   const demo = hash.includes("mentionads=demo") || config.includes("demo");
 
-  const pageURL = "https://api.mentionads.com/v1/page";
-  // const clickURL = "https://api.mentionads.com/v1/click";
+  const pageURL = "https://api.mentionlink.com/v1/page";
+  // const clickURL = "https://api.mentionlink.com/v1/click";
   const attribute = "data-mentionads";
 
   const utf8JSON = "application/json;charset=utf-8";
@@ -42,8 +42,8 @@ interface Window { mentionads?: boolean; }
   const jaccardThreshold = 0.8;
 
   //#region interfaces
-  // https://api.mentionads.com/spec.html
-  // https://api.mentionads.com/spec.json?pretty
+  // https://api.mentionlink.com/spec.html
+  // https://api.mentionlink.com/spec.json?pretty
   interface IRequestBody {
     version: string;
     url: string;

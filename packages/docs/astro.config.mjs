@@ -7,7 +7,7 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://docs.mentionads.com",
+  site: "https://docs.mentionlink.com",
   integrations: [starlight({
     title: "Mentionlink",
     social: [{
@@ -20,7 +20,7 @@ export default defineConfig({
     },
     sidebar: [{
       label: "Login",
-      link: "https://app.mentionads.com/accounts/login/",
+      link: "https://app.mentionlink.com/accounts/login/",
       attrs: {
         target: "_blank"
       }

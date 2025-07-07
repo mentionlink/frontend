@@ -6,4 +6,4 @@ user-agent: *
 allow: /
 disallow: /cdn-cgi/
 
-sitemap: https://docs.mentionads.com/sitemap-index.xml
+sitemap: https://docs.mentionlink.com/sitemap-index.xml
