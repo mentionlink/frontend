@@ -1,5 +1,5 @@
 {
-  "name": "@mentionads/docs",
+  "name": "@mentionlink/docs",
   "version": "0.0.3",
   "type": "module",
   "license": "PolyForm-Shield-1.0.0",
@@ -23,6 +23,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mentionads/frontend.git"
+    "url": "https://github.com/mentionlink/frontend.git"
   }
 }

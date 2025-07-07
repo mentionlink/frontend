@@ -11,30 +11,30 @@
 //#endregion
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-interface Window { mentionads?: boolean; }
+interface Window { mentionlink?: boolean; }
 
 (function () {
   const name = "Mentionlink";
   const version = "1.0.0";
   console.info(name, `v${version}`, "https://www.mentionlink.com/changelog");
 
-  if (window.mentionads) {
+  if (window.mentionlink) {
     console.warn(name, "E00", "The script is already running.");
     return;
   }
-  window.mentionads = true;
+  window.mentionlink = true;
 
   const { body, location: { hash } } = document;
   const script = document.querySelector("script[src^='https://cdn.mentionlink.com']");
   const config = script?.getAttribute("data-config")
-    ?? body?.getAttribute("data-mentionads")
+    ?? body?.getAttribute("data-mentionlink")
     ?? "";
-  const debug = hash.includes("mentionads=debug") || config.includes("debug");
-  const demo = hash.includes("mentionads=demo") || config.includes("demo");
+  const debug = hash.includes("mentionlink=debug") || config.includes("debug");
+  const demo = hash.includes("mentionlink=demo") || config.includes("demo");
 
   const pageURL = "https://api.mentionlink.com/v1/page";
   // const clickURL = "https://api.mentionlink.com/v1/click";
-  const attribute = "data-mentionads";
+  const attribute = "data-mentionlink";
 
   const utf8JSON = "application/json;charset=utf-8";
   const space = " ";
@@ -176,7 +176,7 @@ interface Window { mentionads?: boolean; }
         url: document.location.href,
         body: document.body.innerText,
         texts: Array.from(document.body.getElementsByTagName("p"))
-          .filter(element => element.closest("[data-mentionads-ignore]") === null)
+          .filter(element => element.closest("[data-mentionlink-ignore]") === null)
           .map(element => element.innerText)
           .filter(text => text.length > 0),
       };
@@ -204,7 +204,7 @@ interface Window { mentionads?: boolean; }
       const { from, to } = rewrite;
 
       const elements = Array.from(document.body.getElementsByTagName("p"))
-        .filter(element => element.closest("[data-mentionads-ignore]") === null);
+        .filter(element => element.closest("[data-mentionlink-ignore]") === null);
       for (let i = 0; i < elements.length; ++i) {
         const text = elements[i].innerText;
         if (text !== from) {
@@ -232,7 +232,7 @@ interface Window { mentionads?: boolean; }
         (node: Node) => (node as Text).wholeText.toLowerCase().includes(lowercasedSubstring) &&
           ["ABBR", "B", "BLOCKQUOTE", "CITE", "EM", "FIGCAPTION", "I", "LI", "MARK", "OL", "P", "Q", "SMALL", "SPAN", "STRONG", "U", "UL"]
             .includes(node.parentElement?.tagName ?? "") &&
-          node.parentElement?.closest("[data-mentionads-ignore]") === null
+          node.parentElement?.closest("[data-mentionlink-ignore]") === null
           ? NodeFilter.FILTER_ACCEPT
           : NodeFilter.FILTER_REJECT,
       );

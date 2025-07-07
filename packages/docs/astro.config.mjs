@@ -13,10 +13,10 @@ export default defineConfig({
     social: [{
       icon: "github",
       label: "GitHub",
-      href: "https://github.com/mentionads/frontend"
+      href: "https://github.com/mentionlink/frontend"
     }],
     editLink: {
-      baseUrl: "https://github.com/mentionads/frontend/edit/main/packages/docs"
+      baseUrl: "https://github.com/mentionlink/frontend/edit/main/packages/docs"
     },
     sidebar: [{
       label: "Login",

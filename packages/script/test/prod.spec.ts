@@ -30,7 +30,7 @@ test("if page has title", async ({ page }) => {
 test("if substrings are hyperlinked", async ({ page }) => {
   // Script does not hyperlink substrings in `h1` elements.
   await expect(page.locator("a", { hasText: "Google Pixel 9 Pro" })).not.toBeVisible();
-  // Script does not hyperlink substrings in elements with parents decorated with the `data-mentionads-ignore` attribute.
-  await expect(page.locator("[data-mentionads-ignore] a", { hasText: "Apple iPhone 16 Pro" })).not.toBeVisible();
+  // Script does not hyperlink substrings in elements with parents decorated with the `data-mentionlink-ignore` attribute.
+  await expect(page.locator("[data-mentionlink-ignore] a", { hasText: "Apple iPhone 16 Pro" })).not.toBeVisible();
   await expect(page.locator("a", { hasText: "Apple iPhone 16 Pro" })).toBeVisible();
 });
