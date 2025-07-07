@@ -1,4 +1,4 @@
-// Copyright 2024 Mention Ads. All rights reserved.
+// Copyright 2024 Mentionlink. All rights reserved.
 // Use of this source code is governed by the PolyForm Shield 1.0.0 license
 // that can be found in the LICENSE.md file at the root of this repository.
 
@@ -9,7 +9,7 @@ import starlight from "@astrojs/starlight";
 export default defineConfig({
   site: "https://docs.mentionads.com",
   integrations: [starlight({
-    title: "Mention Ads",
+    title: "Mentionlink",
     social: [{
       icon: "github",
       label: "GitHub",

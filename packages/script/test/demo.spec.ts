@@ -1,4 +1,4 @@
-// Copyright 2024 Mention Ads. All rights reserved.
+// Copyright 2024 Mentionlink. All rights reserved.
 // Use of this source code is governed by the PolyForm Shield 1.0.0 license
 // that can be found in the LICENSE.md file at the root of this repository.
 
@@ -24,7 +24,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("if page has title", async ({ page }) => {
-  await expect(page).toHaveTitle(/Mention Ads demo tests/);
+  await expect(page).toHaveTitle(/Mentionlink demo tests/);
 });
 
 test("if substrings are marked and hyperlinked", async ({ page }) => {

@@ -1,9 +1,9 @@
 ---
-# Copyright 2024 Mention Ads. All rights reserved.
+# Copyright 2024 Mentionlink. All rights reserved.
 # Use of this source code is governed by the PolyForm Shield 1.0.0 license
 # that can be found in the LICENSE.md file at the root of this repository.
 title: Frequently asked questions (FAQ)
-description: A collection of frequently asked questions when it comes to using the Mention Ads script.
+description: A collection of frequently asked questions when it comes to using the Mentionlink script.
 ---
 
 ## Performance
@@ -27,10 +27,10 @@ Then, the script is served through the content delivery network (CDN) of Cloudfl
 <details>
 <summary>Will adding the script put my website at risk?</summary>
 **No.**
-All affiliate links added by Mention Ads have `target="_blank"`, thus `window.opener` will return `null`.
+All affiliate links added by Mentionlink have `target="_blank"`, thus `window.opener` will return `null`.
 This approach instructs the browser to naviate to the e-commerce store without granting the new browsing context access to your website through the `window.opener` property on the opened window.
 Please read the [MDN documentation on `rel="noopener"`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/rel/noopener) for more information; please note that `rel="noopener"` is the equivalent of not setting `target="_blank"` so that the link opens in the same tab.
-Mention Ads prefers to open affiliate links in new tabs, thus setting `target="_blank"` will suffice.
+Mentionlink prefers to open affiliate links in new tabs, thus setting `target="_blank"` will suffice.
 </details>
 
 ## Search engine optimization (SEO)
@@ -38,15 +38,15 @@ Mention Ads prefers to open affiliate links in new tabs, thus setting `target="_
 <details>
 <summary>Will adding the script impact my search engine optimization (SEO)?</summary>
 **No.**
-All affiliate links added by Mention Ads have `rel="nofollow"`, thus search engines will ignore these outgoing links.
+All affiliate links added by Mentionlink have `rel="nofollow"`, thus search engines will ignore these outgoing links.
 </details>
 
 ## Cookies
 
 <details>
-<summary>Do I need to include Mention Ads in a cookie consent banner?</summary>
+<summary>Do I need to include Mentionlink in a cookie consent banner?</summary>
 **No.**
-Mention Ads does **not** send any cookies.  This can be confirmed by seeing that the `fetch` call in the script does not set `"credentials": "include"` in the payload.  Please read the [MDN documentation on Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for more information.
+Mentionlink does **not** send any cookies.  This can be confirmed by seeing that the `fetch` call in the script does not set `"credentials": "include"` in the payload.  Please read the [MDN documentation on Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) for more information.
 
 Furthemore, the HTTP preflight (Cross-Origin Resource Sharing) CORS request does not reply with the HTTP header `Access-Control-Allow-Credentials: true`, thus the browser will not allow the endpoint to set any cookies for the root domain or subdomains of `mentionads.com`.  This can be confirmed by using the DevTools in Chrome.  Please read the [MDN documentation on Access-Control-Allow-Credentials](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials) for more information.
 </details>

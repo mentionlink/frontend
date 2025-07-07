@@ -1,4 +1,4 @@
-# Mention Ads Script
+# Mentionlink Script
 
 ## Cloudflare Token
 

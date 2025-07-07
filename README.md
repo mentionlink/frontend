@@ -1,4 +1,4 @@
-# Mention Ads
+# Mentionlink
 
 ![docs workflow](https://github.com/mentionads/frontend/actions/workflows/docs.yml/badge.svg)
 ![script workflow](https://github.com/mentionads/frontend/actions/workflows/script.yml/badge.svg)
