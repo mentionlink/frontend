@@ -62,11 +62,11 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           rclone version
-          rclone copyto src/script.ts cloudflare:mentionads-cdn-prod/v1/script.ts --config rclone.conf
-          rclone copyto out/script.js cloudflare:mentionads-cdn-prod/v1/script.js --config rclone.conf
-          rclone copyto out/script.js.map cloudflare:mentionads-cdn-prod/v1/script.js.map --config rclone.conf
-          rclone copyto out/script.min.js cloudflare:mentionads-cdn-prod/v1/script.min.js --config rclone.conf
-          rclone copyto out/script.min.js.map cloudflare:mentionads-cdn-prod/v1/script.min.js.map --config rclone.conf
+          rclone copyto src/script.ts cloudflare:mentionlink-cdn-prod/v1/script.ts --config rclone.conf
+          rclone copyto out/script.js cloudflare:mentionlink-cdn-prod/v1/script.js --config rclone.conf
+          rclone copyto out/script.js.map cloudflare:mentionlink-cdn-prod/v1/script.js.map --config rclone.conf
+          rclone copyto out/script.min.js cloudflare:mentionlink-cdn-prod/v1/script.min.js --config rclone.conf
+          rclone copyto out/script.min.js.map cloudflare:mentionlink-cdn-prod/v1/script.min.js.map --config rclone.conf
         working-directory: ${{ env.BUILD_PATH }}
         env:
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
