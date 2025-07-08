@@ -8,8 +8,7 @@ FROM mcr.microsoft.com/devcontainers/javascript-node:1-20
 # System Settings > Screen Time > Content & Privacy Restrictions
 # and restart your Mac.
 
-RUN npm install --global @playwright/test svgo
-RUN npx playwright install --with-deps
+RUN npm install --global svgo
 
 RUN apt-get update && \
   apt-get install --yes curl git git-lfs librsvg2-bin ripgrep tree wget
