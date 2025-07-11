@@ -8,6 +8,7 @@
 // E20: The rewrite is not a prefix or a suffix of the original text.
 // E30: The text does not exist in the HTML node, even after concatenation.
 // E40: The beacon was not queued, thus instrumentation failed.
+// W10: The backend queued the request, but the script needs to retry after a few seconds.
 //#endregion
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -40,6 +41,9 @@ interface Window { mentionlink?: boolean; }
   const space = " ";
 
   const jaccardThreshold = 0.8;
+
+  const defaultRetryAfterSeconds = 20;
+  let retries = 3;
 
   //#region interfaces
   // https://api.mentionlink.com/spec.html
@@ -188,6 +192,14 @@ interface Window { mentionlink?: boolean; }
         method: "POST",
         body: JSON.stringify(requestBody),
       });
+      if ([202, 409].includes(response.status) && retries--/*decrement*/ > 0) {
+        const retryAfterSeconds = parseInt(response.headers.get("retry-after")
+          ?? defaultRetryAfterSeconds.toString());
+        console.warn(name, "W10", `HTTP ${response.status}`, `Retrying in ${retryAfterSeconds} seconds...`);
+        await new Promise(resolve => setTimeout(resolve, retryAfterSeconds * 1e3));
+
+        return main();
+      }
       if (response.status !== 200) {
         throw new Error(`HTTP ${response.status}`);
       }
