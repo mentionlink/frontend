@@ -2,14 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Pages",
+      "name": "Run Docs",
       "request": "launch",
       "type": "node-terminal",
       "command": "npm run dev",
-      "cwd": "${workspaceFolder}/packages/pages"
+      "cwd": "${workspaceFolder}/packages/docs"
     },
     {
-      "name": "Preview Pages",
+      "name": "Preview Docs",
       "request": "launch",
       "type": "chrome",
       "url": "http://localhost:4321"

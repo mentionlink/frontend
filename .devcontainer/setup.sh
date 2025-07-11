@@ -6,7 +6,7 @@
 git config pull.rebase false
 git config core.hooksPath .githooks
 
-pushd packages/pages
+pushd packages/docs
 npm ci
 npm run build
 popd
