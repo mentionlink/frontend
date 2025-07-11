@@ -40,7 +40,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("if page has title", async ({ page }) => {
-  await expect(page).toHaveTitle(/Mentionlink retry tests/);
+  await expect(page).toHaveTitle("Mentionlink retry tests");
 });
 
 test("if substrings are not hyperlinked at first but are hyperlinked after the first retry", async ({ page }) => {

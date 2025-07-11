@@ -24,7 +24,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("if page has title", async ({ page }) => {
-  await expect(page).toHaveTitle(/Mentionlink prod tests/);
+  await expect(page).toHaveTitle("Mentionlink prod tests");
 });
 
 test("if substrings are hyperlinked", async ({ page }) => {

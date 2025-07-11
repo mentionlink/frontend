@@ -32,7 +32,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("if page has title", async ({ page }) => {
-  await expect(page).toHaveTitle(/Mentionlink SPA tests/);
+  await expect(page).toHaveTitle("Mentionlink SPA tests");
 });
 
 test("if route is called multiple times", async ({ page }) => {
