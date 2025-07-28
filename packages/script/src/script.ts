@@ -16,7 +16,7 @@ interface Window { mentionlink?: boolean; }
 
 (function () {
   const name = "Mentionlink";
-  const version = "1.0.1";
+  const version = "1.0.2";
   console.info(name, `v${version}`, "https://docs.mentionlink.com/changelog/");
 
   if (window.mentionlink) {

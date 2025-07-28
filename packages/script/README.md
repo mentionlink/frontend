@@ -1,5 +1,17 @@
 # Mentionlink Script
 
-## Cloudflare Token
+## Setup
 
-The token is named `mentionlink/frontend` and is an R2 bucket scoped token restricted to "Object Read & Write" permissions for the bucket `mentionlink-cdn-prod`. Please double check that the token does **not** have admin permissions!
+```html
+<head>
+  <title>My title</title>
+  <meta name="description" content="My description">
+  <!-- TODO: Add the following line to every page on your website. -->
+  <script async src="https://cdn.mentionlink.com/v1/script.min.js"></script>
+</head>
+<body>
+  <p>The iPhone 16 Pro has a new camera button.</p>
+</body>
+```
+
+Please visit <https://docs.mentionlink.com/setup/> for more information.
