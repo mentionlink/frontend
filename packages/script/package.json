@@ -1,7 +1,8 @@
 {
   "name": "mentionlink",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "PolyForm-Shield-1.0.0",
+  "homepage": "https://mentionlink.com",
   "scripts": {
     "lint": "eslint",
     "lint:fix": "eslint --fix",
