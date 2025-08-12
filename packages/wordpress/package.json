@@ -1,0 +1,22 @@
+{
+  "name": "@mentionlink/wordpress",
+  "version": "1.0.1",
+  "description": "WordPress plugin for Mentionlink script integration",
+  "main": "mentionlink.php",
+  "scripts": {
+    "lint": "php -l mentionlink.php && php -l uninstall.php",
+    "zip": "zip --junk-paths mentionlink.zip readme.txt mentionlink.php uninstall.php"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mentionlink/backend.git"
+  },
+  "keywords": [
+    "wordpress",
+    "mentionlink",
+    "affiliate",
+    "marketing"
+  ],
+  "author": "Mentionlink",
+  "license": "GPL-2.0-or-later"
+}
