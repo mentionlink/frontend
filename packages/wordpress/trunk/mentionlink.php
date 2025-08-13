@@ -57,7 +57,7 @@ class MentionLink {
 
     wp_enqueue_script(
       'mentionlink-script',
-      'https://cdn.mentionlink.com/v1/script.min.js',
+      'https://cdn.mentionlink.com/script.min.js',
       array(),
       self::VERSION,
       array()
@@ -181,7 +181,7 @@ class MentionLink {
         <?php
         $domain = get_option(self::OPTION_NAME, self::DEFAULT_DOMAIN);
         ?>
-        <code>&lt;script async data-domain="<?php echo esc_attr($domain); ?>" src="https://cdn.mentionlink.com/v1/script.min.js"&gt;&lt;/script&gt;</code>
+        <code>&lt;script async data-domain="<?php echo esc_attr($domain); ?>" src="https://cdn.mentionlink.com/script.min.js"&gt;&lt;/script&gt;</code>
       </div>
     </div>
     <?php
