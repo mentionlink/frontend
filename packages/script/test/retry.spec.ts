@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   let retry = 0;
 
   // https://mentionlink.com/spec.json
-  await page.route(/v1/, route => {
+  await page.route(/script/, route => {
     if (retry++ === 0) {
       return route.fulfill({
         status: 202,

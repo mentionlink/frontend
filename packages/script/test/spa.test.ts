@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   apiCallCount = 0;
 
   // https://mentionlink.com/spec.json
-  await page.route(/v1/, route => {
+  await page.route(/script/, route => {
     apiCallCount++;
 
     return route.fulfill({
