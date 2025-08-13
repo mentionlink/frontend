@@ -4,8 +4,8 @@
   "description": "WordPress plugin for Mentionlink script integration",
   "main": "mentionlink.php",
   "scripts": {
-    "lint": "php -l mentionlink.php && php -l uninstall.php",
-    "zip": "zip --junk-paths mentionlink.zip readme.txt mentionlink.php uninstall.php"
+    "lint": "php -l trunk/mentionlink.php && php -l trunk/uninstall.php",
+    "zip": "zip --junk-paths mentionlink.zip trunk/readme.txt trunk/mentionlink.php trunk/uninstall.php"
   },
   "repository": {
     "type": "git",
