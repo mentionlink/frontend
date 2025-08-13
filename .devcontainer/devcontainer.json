@@ -1,7 +1,8 @@
 {
   "name": "Frontend",
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:latest": {},
+    "ghcr.io/anthropics/devcontainer-features/claude-code:latest": {}
   },
   "build": {
     "dockerfile": "./Dockerfile"
