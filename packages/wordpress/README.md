@@ -6,9 +6,10 @@
 svn co https://plugins.svn.wordpress.org/mentionlink wordpress
 
 svn add trunk/*
-svn ci -m 'adding version 1.0.1' --username TODO --password TODO
-svn cp trunk tags/1.0.1
-svn ci -m "tagging version 1.0.1"
+svn diff trunk/*
+svn ci -m 'adding version 1.1.1' --username mentionlink --password TODO
+svn cp trunk tags/1.1.1
+svn ci -m "tagging version 1.1.1"
 ```
 
 ## Validators

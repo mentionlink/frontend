@@ -3,7 +3,7 @@
  * Plugin Name: Mentionlink
  * Plugin URI: https://docs.mentionlink.com/setup/wordpress/
  * Description: Automatically embed the Mentionlink script to enable product mention detection and affiliate link conversion.
- * Version: 1.0.1
+ * Version: 1.1.1
  * Author: Mentionlink
  * Author URI: https://mentionlink.com/
  * License: GPL v2 or later

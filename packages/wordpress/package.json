@@ -1,11 +1,12 @@
 {
   "name": "@mentionlink/wordpress",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "WordPress plugin for Mentionlink script integration",
   "main": "mentionlink.php",
   "scripts": {
     "lint": "php -l trunk/mentionlink.php && php -l trunk/uninstall.php",
-    "zip": "zip --junk-paths mentionlink.zip trunk/readme.txt trunk/mentionlink.php trunk/uninstall.php"
+    "zip": "zip --junk-paths mentionlink.zip trunk/readme.txt trunk/mentionlink.php trunk/uninstall.php",
+    "copy": "cp trunk/* ~/mentionlink/wordpress/trunk"
   },
   "repository": {
     "type": "git",
