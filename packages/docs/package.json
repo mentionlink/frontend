@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/starlight": "^0.35.2",
-    "astro": "^5.12.9",
+    "astro": "^5.13.3",
     "@fontsource-variable/jetbrains-mono": "^5.2.6",
     "@fontsource-variable/rubik": "^5.2.6"
   },
