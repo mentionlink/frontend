@@ -11,12 +11,14 @@
 // W10: The backend queued the request, but the script needs to retry after a few seconds.
 //#endregion
 
+import * as pkg from "../package.json";
+
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 interface Window { mentionlink?: boolean; }
 
 (function () {
   const name = "Mentionlink";
-  const version = "1.1.0";
+  const version = pkg.version;
   console.info(name, `v${version}`, "https://docs.mentionlink.com/changelog/");
 
   if (window.mentionlink) {
