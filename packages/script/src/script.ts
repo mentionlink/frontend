@@ -16,7 +16,7 @@ interface Window { mentionlink?: boolean; }
 
 (function () {
   const name = "Mentionlink";
-  const version = "1.0.2";
+  const version = "1.1.0";
   console.info(name, `v${version}`, "https://docs.mentionlink.com/changelog/");
 
   if (window.mentionlink) {
@@ -279,6 +279,7 @@ interface Window { mentionlink?: boolean; }
     const link = (mention: IMention) => {
       const { substring, title, url } = mention;
 
+      // Checks that the match happens at word boundaries to avoid linking "zooming" when the substring is "zoom".
       const regexp = new RegExp(`\\b${RegExp.escape(substring)}\\b`, "i");
 
       // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
