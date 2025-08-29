@@ -278,13 +278,14 @@ interface Window { mentionlink?: boolean; }
 
     const link = (mention: IMention) => {
       const { substring, title, url } = mention;
-      const lowercasedSubstring = substring.toLowerCase();
+
+      const regexp = new RegExp(`\\b${RegExp.escape(substring)}\\b`, "i");
 
       // https://developer.mozilla.org/en-US/docs/Web/HTML/Element
       const iterator = document.createNodeIterator(
         document.body,
         NodeFilter.SHOW_TEXT,
-        (node: Node) => (node as Text).wholeText.toLowerCase().includes(lowercasedSubstring) &&
+        (node: Node) => regexp.test((node as Text).wholeText) &&
           ["ABBR", "B", "BLOCKQUOTE", "CITE", "EM", "FIGCAPTION", "I", "LI", "MARK", "OL", "P", "Q", "SMALL", "SPAN", "STRONG", "U", "UL"]
             .includes(node.parentElement?.tagName ?? "") &&
           node.parentElement?.closest("[data-mentionlink-ignore]") === null
@@ -297,6 +298,8 @@ interface Window { mentionlink?: boolean; }
         if (debug) {
           console.debug(name, "node iterator", node.wholeText);
         }
+
+        const lowercasedSubstring = substring.toLowerCase();
 
         // Merges adjacent text nodes because `wholeText` returns the text content of the node and
         // its neighbors; otherwise, the offset used by the range is incorrect.

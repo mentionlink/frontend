@@ -17,6 +17,10 @@ test.beforeEach(async ({ page }) => {
         substring: "Apple iPhone 16 Pro",
         title: "Apple iPhone 16 Pro",
         url: "https://www.apple.com",
+      }, {
+        substring: "Zoom",
+        title: "Zoom",
+        url: "https://zoom.us",
       }],
     },
   }));
@@ -33,4 +37,6 @@ test("if substrings are hyperlinked", async ({ page }) => {
   // Script does not hyperlink substrings in elements with parents decorated with the `data-mentionlink-ignore` attribute.
   await expect(page.locator("[data-mentionlink-ignore] a", { hasText: "Apple iPhone 16 Pro" })).not.toBeVisible();
   await expect(page.locator("a", { hasText: "Apple iPhone 16 Pro" })).toBeVisible();
+  // Script does not hyperlink partial substrings and checks for word boundaries.
+  await expect(page.locator("a", { hasText: "Zoom" })).toHaveCount(1);
 });
