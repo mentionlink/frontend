@@ -75,7 +75,14 @@ jobs:
           AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
       - name: Publish Package to NPM
         if: github.ref == 'refs/heads/main'
-        run: npm publish --provenance --access public
+        run: |
+          npm version patch
+          git config user.name "github"
+          git config user.email "github@mentionlink.com"
+          git add package.json package-lock.json
+          git commit -m "chore: publish mentionlink package"
+          git push
+          npm publish --provenance --access public
         working-directory: ${{ env.BUILD_PATH }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
