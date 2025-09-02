@@ -12,8 +12,8 @@
     "serve": "mkdir -p out && cp test/*.html out && esbuild src/script.ts --sourcemap --bundle --outdir=out --servedir=out --serve=0.0.0.0:9000"
   },
   "devDependencies": {
-    "@playwright/test": "^1.54.2",
-    "@types/node": "^24.0.13",
+    "@playwright/test": "^1.55.0",
+    "@types/node": "^24.3.0",
     "esbuild": "^0.25.9",
     "eslint": "^9.34.0",
     "playwright": "^1.55.0",
